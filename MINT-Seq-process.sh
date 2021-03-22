@@ -30,7 +30,7 @@ samtools index TT-Seq-m6Aspike.sorted.bam
 samtools idxstats TT-Seq-m6Aspike.sorted.bam > TT-Seq-m6Aspike.out
 
 ###L1 quantification
-analyzeRepeats.pl repeats hg19 -L3 L1 -fpkm -strand + -noCondensing -d TT-Seq-homer MINT-Seq-homer > MINT-TT.L1.rpkm.txt
+analyzeRepeats.pl repeats hg19 -L3 L1 -fpkm -strand + -noCondensing -d TT-Seq-homer MINT-Seq-homer > MINT-TT.L1.fpkm.txt
 
 ###MACS2 peak calling
-macs2 callpeak  -t MINT-SeqAligned.out.bam  -c TT-SeqAligned.out.bam  -f BAM -g hs -n MINT-Seq-macs2 -B -q 0.05
+macs2 callpeak  -t MINT-SeqAligned.out.bam  -c TT-SeqAligned.out.bam  -f BAM -g hs -n MINT-Seq-macs2 -B -q 0.01
